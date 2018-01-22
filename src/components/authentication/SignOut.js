@@ -4,7 +4,17 @@ import { firebase } from '../../fire';
 import { SignOutButton } from './styles';
 
 const SignOut = () => {
-	return <SignOutButton> Sign Out </SignOutButton>;
+	return (
+		<SignOutButton
+			onClick={() => {
+				firebase
+					.auth()
+					.signOut()
+					.then(() => window.location.reload());
+			}}>
+			Sign Out
+		</SignOutButton>
+	);
 };
 
 export default SignOut;

@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 
 export const PageContainer = styled.div`
-	height: 100vh;
+	min-height: 100vh;
 	background: linear-gradient(to bottom, #67b26f, #4ca2cd);
-
+	display: flex;
 	justify-content: center;
 	align-items: center;
-	display: flex;
 `;
 
 export const TodoContainer = styled.div`

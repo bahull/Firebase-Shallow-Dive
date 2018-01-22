@@ -4,6 +4,7 @@ import { firebase } from './fire';
 import Authentication from './components/authentication';
 import TodoList from './components/todolist';
 import SignOut from './components/authentication/SignOut';
+import Profile from './components/profile';
 
 import { PageContainer } from './styles';
 
@@ -31,7 +32,14 @@ class App extends Component {
     if (checkedAuth) {
       return (
         <PageContainer>
-          {userid ? <TodoList> logged in </TodoList> : <Authentication />}
+          {userid ? (
+            <div>
+              <Profile uid={userid} />
+              <TodoList uid={userid}> logged in </TodoList>
+            </div>
+          ) : (
+            <Authentication />
+          )}
           {userid && <SignOut />}
         </PageContainer>
       );

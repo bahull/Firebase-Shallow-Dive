@@ -59,8 +59,21 @@ export const LoginTab = styled.span`
 	width: 50%;
 	height: 100%;
 	background-color: #2196f3;
-	filter: ${props =>
-		!props.selected ? 'brightness(110%)' : 'brightness(100%)'};
+	filter: ${props => (props.selected ? 'brightness(110%)' : 'brightness(80%)')};
+	&:hover {
+		filter: brightness(110%);
+	}
+`;
+
+export const RegisterTab = styled.span`
+	border-top-right-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50%;
+	height: 100%;
+	background-color: green;
+	filter: ${props => (props.selected ? 'brightness(110%)' : 'brightness(80%)')};
 	&:hover {
 		filter: brightness(110%);
 	}
@@ -113,19 +126,4 @@ export const ButtonText = styled.p`
 	font-size: 16px;
 	font-weight: bold;
 	color: white;
-`;
-
-export const RegisterTab = styled.span`
-	border-top-right-radius: 10px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 50%;
-	height: 100%;
-	background-color: green;
-	filter: ${props =>
-		props.selected ? 'brightness(110%)' : 'brightness(100%)'};
-	&:hover {
-		filter: brightness(110%);
-	}
 `;

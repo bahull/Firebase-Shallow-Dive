@@ -6,7 +6,7 @@ const config = {
 	authDomain: 'devicttalk.firebaseapp.com',
 	databaseURL: 'https://devicttalk.firebaseio.com',
 	projectId: 'devicttalk',
-	storageBucket: '',
+	storageBucket: 'devicttalk.appspot.com',
 	messagingSenderId: '998184814030',
 };
 

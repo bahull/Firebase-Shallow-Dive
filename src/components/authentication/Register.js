@@ -31,16 +31,21 @@ export default class Register extends Component {
 					.collection('users')
 					.doc(result.uid)
 					.set({
-						name: 'Los Angeles',
-						state: 'CA',
-						country: 'USA',
+						email: this.state.email,
+						profilePic:
+							'http://hope4merton.com/wp-content/uploads/2015/12/profile-placeholder.gif',
+						tasks: [
+							{
+								name: 'My First Task',
+								due: '12/17/2018 1:00 PM',
+								completed: false,
+								id: Math.ceil(Math.random() * Math.pow(3, 30)),
+							},
+						],
 					});
 			})
 			.catch(error => {
-				console.log(error);
-				error.message.includes('email')
-					? this.setState({ emailError: true })
-					: this.setState({ passwordError: false });
+				this.setState({ error: error.message });
 			});
 	}
 

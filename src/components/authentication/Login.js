@@ -28,7 +28,6 @@ export default class Login extends Component {
 			.signInWithEmailAndPassword(this.state.email, this.state.password)
 			.then(result => {
 				let userid = result.uid;
-				console.log(userid);
 				firebase
 					.firestore()
 					.collection(userid)
